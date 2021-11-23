@@ -142,7 +142,7 @@ def show_graph(return_streamlit=False) -> components.html:
     w1 = g.width
     w1 = int(w1.replace("px", ""))
 
-    g.save_graph("graph.html")
+    g.save_graph("index.html")
 
     if return_streamlit:
         return components.html(g.html, height=h1, width=w1)
