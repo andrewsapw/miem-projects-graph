@@ -129,7 +129,7 @@ def make_graph_nx():
             value = edges[edge]
             nx_graph.add_edge(nodes[n1], nodes[n2], value=value)
 
-    g = Network(height="1000px", width="1000px", heading="")
+    g = Network(height="100%", width="100%", heading="")
     g.from_nx(nx_graph)
 
     return g
@@ -137,17 +137,17 @@ def make_graph_nx():
 
 def show_graph(return_streamlit=False) -> components.html:
     g = make_graph_nx()
-    h1 = g.height
-    h1 = int(h1.replace("px", ""))
-    w1 = g.width
-    w1 = int(w1.replace("px", ""))
+    # h1 = g.height
+    # h1 = int(h1.replace("px", ""))
+    # w1 = g.width
+    # w1 = int(w1.replace("px", ""))
 
     g.save_graph("index.html")
 
-    if return_streamlit:
-        return components.html(g.html, height=h1, width=w1)
-    else:
-        return g
+    # if return_streamlit:
+    #     return components.html(g.html, height=h1, width=w1)
+    # else:
+    return g
 
 
 if __name__ == "__main__":

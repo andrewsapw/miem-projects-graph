@@ -1,7 +1,7 @@
 import requests
 import pickle
 import os
-from config import CABINET_API
+from config import CABINET_API_TOKEN
 
 file_path = os.path.dirname(__file__)
 
@@ -16,7 +16,7 @@ def get_projects() -> dict:
         print("REQUESTING DATA")
         response = requests.get(
             f"https://cabinet.miem.hse.ru/api/projects",
-            headers={"accept": "application/json", "X-Auth-Token": CABINET_API},
+            headers={"accept": "application/json", "X-Auth-Token": CABINET_API_TOKEN},
         )
 
         data = response.json()["data"]
